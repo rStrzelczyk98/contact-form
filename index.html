@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Contact Form</title>
+  </head>
+  <body>
+    <div class="modal hidden">
+      <div class="thanks">
+        <h2>Thank you!</h2>
+        <p>Our team will contact you within 24 hours.</p>
+        <button class="btn" onclick="ok()">Ok</button>
+      </div>
+    </div>
+    <main class="container">
+      <img src="img/sapiens.svg" alt="" />
+      <form
+        action="form.html"
+        method="get"
+        enctype="application/x-www-form-urlencoded"
+        target="_blank"
+        autocomplete="off"
+      >
+        <fieldset class="services">
+          <legend>Services</legend>
+          <input
+            type="checkbox"
+            name="service"
+            id="dev"
+            value="software development"
+          />
+          <label for="dev">Software development</label>
+          <input type="checkbox" name="service" id="cloud" value="cloud" />
+          <label for="cloud">Cloud</label>
+          <input
+            type="checkbox"
+            name="service"
+            id="training"
+            value="training"
+          />
+          <label for="training">Training</label>
+        </fieldset>
+        <fieldset class="required">
+          <legend>Required</legend>
+          <div class="input-field">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              name="fullName"
+              id="fullName"
+              maxlength="35"
+              pattern="(\D+)\s(\D+)"
+              title="Max 35 characters, digits are not allowed. Cannot be empty!"
+            />
+          </div>
+          <div class="input-field">
+            <label for="email">E-mail</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              maxlength="45"
+              pattern="([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})"
+              title="Max 45 characters, format: 'random@email.org'. Cannot be empty!"
+            />
+          </div>
+          <div class="input-field">
+            <label for="msg">Message</label>
+            <textarea
+              name="msg"
+              id="msg"
+              cols="30"
+              rows="10"
+              placeholder="Write your message here..."
+              title="Cannot be empty!"
+            ></textarea>
+          </div>
+        </fieldset>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </main>
+  </body>
+</html>

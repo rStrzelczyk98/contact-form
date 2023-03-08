@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background-color: var(--orange);
+        min-height: 100vh;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+      }
+      .data {
+        background-color: var(--white);
+        max-width: 60vw;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 1rem;
+        padding: 1rem;
+      }
+      hr {
+        border: var(--border-thin);
+      }
+    </style>
+    <title>Data</title>
+  </head>
+  <body>
+    <div class="data"></div>
+    <script>
+      const displayData = document.querySelector('.data');
+      const formData = new URLSearchParams(window.location.search);
+      formData.forEach((value, name) => {
+        displayData.append(`${name.toUpperCase()}: ${value}`);
+        displayData.append(document.createElement('br'));
+        displayData.append(document.createElement('hr'));
+      });
+    </script>
+  </body>
+</html>
